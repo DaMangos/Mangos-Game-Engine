@@ -7,48 +7,52 @@ namespace graphics::vk
 class device final
 {
   public:
-    constexpr explicit device(unique_handle<VkDevice> device);
+    typedef common_handle<VkDevice> public_type;
+    typedef unique_handle<VkDevice> private_type;
+
+    constexpr explicit device(private_type &&device) noexcept;
 
     [[nodiscard]]
-    constexpr common_handle<VkDevice> get() const noexcept;
+    constexpr public_type get() const noexcept;
 
     [[nodiscard]]
-    unique_handle<VkCommandBuffer> allocate_command_buffers(VkCommandBufferAllocateInfo allocate_info) const;
+    unique_handle<std::vector<VkCommandBuffer>> allocate_command_buffers(common_handle<VkCommandPool> command_pool,
+                                                                         VkCommandBufferAllocateInfo  allocate_info) const;
 
     [[nodiscard]]
-    unique_handle<VkCommandPool> create_command_pool(VkCommandPoolCreateInfo info) const;
+    unique_handle<VkCommandPool> create_command_pool(VkCommandPoolCreateInfo create_info) const;
 
     [[nodiscard]]
-    unique_handle<VkFence> create_fence(VkFenceCreateInfo info) const;
+    unique_handle<VkFence> create_fence(VkFenceCreateInfo create_info) const;
 
     [[nodiscard]]
-    unique_handle<VkFramebuffer> create_framebuffer(VkFramebufferCreateInfo info) const;
+    unique_handle<VkFramebuffer> create_framebuffer(VkFramebufferCreateInfo create_info) const;
 
     [[nodiscard]]
-    unique_handle<VkImageView> create_image_view(VkImageViewCreateInfo info) const;
+    unique_handle<VkImageView> create_image_view(VkImageViewCreateInfo create_info) const;
 
     [[nodiscard]]
-    unique_handle<VkPipelineLayout> create_pipeline_layout(VkPipelineLayoutCreateInfo info) const;
+    unique_handle<VkPipelineLayout> create_pipeline_layout(VkPipelineLayoutCreateInfo create_info) const;
 
     [[nodiscard]]
-    unique_handle<VkPipeline> create_compute_pipeline(VkComputePipelineCreateInfo info) const;
+    unique_handle<VkPipeline> create_compute_pipeline(VkComputePipelineCreateInfo create_info) const;
 
     [[nodiscard]]
-    unique_handle<VkPipeline> create_graphics_pipeline(VkGraphicsPipelineCreateInfo info) const;
+    unique_handle<VkPipeline> create_graphics_pipeline(VkGraphicsPipelineCreateInfo create_info) const;
 
     [[nodiscard]]
-    unique_handle<VkRenderPass> create_render_pass(VkRenderPassCreateInfo info) const;
+    unique_handle<VkRenderPass> create_render_pass(VkRenderPassCreateInfo create_info) const;
 
     [[nodiscard]]
-    unique_handle<VkSemaphore> create_semaphore(VkSemaphoreCreateInfo info) const;
+    unique_handle<VkSemaphore> create_semaphore(VkSemaphoreCreateInfo create_info) const;
 
     [[nodiscard]]
-    unique_handle<VkShaderModule> create_shader_module(VkShaderModuleCreateInfo info) const;
+    unique_handle<VkShaderModule> create_shader_module(VkShaderModuleCreateInfo create_info) const;
 
     [[nodiscard]]
-    unique_handle<VkSwapchainKHR> create_swapchain(VkSwapchainCreateInfoKHR info) const;
+    unique_handle<VkSwapchainKHR> create_swapchain(VkSwapchainCreateInfoKHR create_info) const;
 
   private:
-    unique_handle<VkDevice> _underling_device;
+    private_type _underling;
 };
 }

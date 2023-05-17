@@ -71,7 +71,7 @@ QualifierOrder: [friend, static, inline, constexpr, volatile, restrict, type, co
 ReferenceAlignment: Right
 ReflowComments: true
 RemoveSemicolon: false
-RequiresClausePosition: OwnLine
+RequiresClausePosition: WithPreceding
 RequiresExpressionIndentation: OuterScope
 SeparateDefinitionBlocks: Always
 SortIncludes: CaseInsensitive
@@ -86,17 +86,7 @@ SpaceBeforeCaseColon: true
 SpaceBeforeCpp11BracedList: false
 SpaceBeforeCtorInitializerColon: true
 SpaceBeforeInheritanceColon: true
-SpaceBeforeParens: Custom
-SpaceBeforeParensOptions: 
-  AfterControlStatements: true
-  AfterForeachMacros: false
-  AfterFunctionDeclarationName: false
-  AfterFunctionDefinitionName: false
-  AfterIfMacros: false
-  AfterOverloadedOperator: false
-  AfterRequiresInClause: true
-  AfterRequiresInExpression: true
-  BeforeNonEmptyParentheses: false
+SpaceBeforeParens: Never
 SpaceBeforeRangeBasedForLoopColon: true
 SpaceBeforeSquareBrackets: false
 SpaceInEmptyBlock: false

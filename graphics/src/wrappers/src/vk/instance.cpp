@@ -2,15 +2,22 @@
 
 namespace graphics::vk
 {
-constexpr instance::instance(VkInstanceCreateInfo create_info)
+unique_handle<VkInstance> make_instance(VkInstanceCreateInfo create_info)
 {
-  if (vkCreateInstance(&create_info, nullptr, _underling_instance.override()) != VK_SUCCESS)
+  unique_handle<VkInstance> instance;
+  if (vkCreateInstance(&create_info, nullptr, instance.override()) != VK_SUCCESS)
     throw std::runtime_error("failed to create VkInstance");
+  return instance;
 }
 
-constexpr common_handle<VkInstance> instance::get() const noexcept
+constexpr instance::instance(private_type &&underling_instance) noexcept
+: _underling_instance(std::move(underling_instance))
 {
-  return common_handle<VkInstance>(_underling_instance.get());
+}
+
+constexpr instance::public_type instance::get() const noexcept
+{
+  return public_type(_underling_instance.get());
 }
 
 std::vector<common_handle<VkPhysicalDevice>> instance::enumerate_Physical_device() const

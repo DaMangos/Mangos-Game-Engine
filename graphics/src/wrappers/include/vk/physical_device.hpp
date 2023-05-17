@@ -7,10 +7,13 @@ namespace graphics::vk
 class physical_device final
 {
   public:
-    constexpr explicit physical_device(common_handle<VkPhysicalDevice> physical_device);
+    typedef common_handle<VkPhysicalDevice> public_type;
+    typedef common_handle<VkPhysicalDevice> private_type;
+
+    constexpr explicit physical_device(private_type &&physical_device) noexcept;
 
     [[nodiscard]]
-    constexpr common_handle<VkPhysicalDevice> get() const noexcept;
+    constexpr public_type get() const noexcept;
 
     [[nodiscard]]
     unique_handle<VkDevice> create_device(VkDeviceCreateInfo create_info) const;
@@ -40,6 +43,6 @@ class physical_device final
     std::vector<VkQueueFamilyProperties> get_queue_family_properties() const;
 
   public:
-    common_handle<VkPhysicalDevice> _underling_physical_device;
+    private_type _underling;
 };
 }

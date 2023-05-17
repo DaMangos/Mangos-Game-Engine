@@ -1,0 +1,21 @@
+.bin/obj/graphics/src/wrappers/src/vk/ext/debug_utils_messenger.o: \
+  /Users/oliverhorriganpierre/Documents/GitHub/Mangos-Game-Engine/graphics/src/wrappers/src/vk/ext/debug_utils_messenger.cpp \
+  /Users/oliverhorriganpierre/Documents/GitHub/Mangos-Game-Engine/graphics/src/wrappers/include/vk/ext/debug_utils_messenger.hpp \
+  /Users/oliverhorriganpierre/Documents/GitHub/Mangos-Game-Engine/graphics/src/handles/include/vk/ext/deleter.hpp \
+  /Users/oliverhorriganpierre/Documents/GitHub/Mangos-Game-Engine/graphics/src/handles/include/vk/deleter.hpp \
+  /Users/oliverhorriganpierre/Documents/GitHub/Mangos-Game-Engine/graphics/src/handles/include/vk/common_handle.hpp \
+  /opt/homebrew/Cellar/glfw/3.3.8/include/GLFW/glfw3.h \
+  /opt/homebrew/opt/vulkan-headers/include/vulkan/vulkan.h \
+  /opt/homebrew/opt/vulkan-headers/include/vulkan/vk_platform.h \
+  /opt/homebrew/opt/vulkan-headers/include/vulkan/vulkan_core.h \
+  /opt/homebrew/opt/vulkan-headers/include/vk_video/vulkan_video_codec_h264std.h \
+  /opt/homebrew/opt/vulkan-headers/include/vk_video/vulkan_video_codec_h264std_decode.h \
+  /opt/homebrew/opt/vulkan-headers/include/vk_video/vulkan_video_codec_h265std.h \
+  /opt/homebrew/opt/vulkan-headers/include/vk_video/vulkan_video_codec_h265std_decode.h \
+  /opt/homebrew/opt/vulkan-headers/include/vulkan/vulkan_beta.h \
+  /opt/homebrew/opt/vulkan-headers/include/vk_video/vulkan_video_codec_h264std_encode.h \
+  /opt/homebrew/opt/vulkan-headers/include/vk_video/vulkan_video_codec_h265std_encode.h \
+  /Users/oliverhorriganpierre/Documents/GitHub/Mangos-Game-Engine/graphics/src/functions/include/vk/to_count.hpp \
+  /Users/oliverhorriganpierre/Documents/GitHub/Mangos-Game-Engine/graphics/src/functions/include/vk/to_data.hpp \
+  /Users/oliverhorriganpierre/Documents/GitHub/Mangos-Game-Engine/graphics/src/functions/include/vk/invoke.hpp \
+  /Users/oliverhorriganpierre/Documents/GitHub/Mangos-Game-Engine/graphics/src/handles/include/vk/unique_handle.hpp

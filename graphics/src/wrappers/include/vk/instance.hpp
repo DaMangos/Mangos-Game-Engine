@@ -8,13 +8,19 @@
 
 namespace graphics::vk
 {
+[[nodiscard]]
+unique_handle<VkInstance> make_instance(VkInstanceCreateInfo create_info);
+
 class instance final
 {
   public:
-    constexpr explicit instance(VkInstanceCreateInfo create_info);
+    typedef common_handle<VkInstance> public_type;
+    typedef unique_handle<VkInstance> private_type;
+
+    constexpr explicit instance(private_type &&underling_instance) noexcept;
 
     [[nodiscard]]
-    constexpr common_handle<VkInstance> get() const noexcept;
+    constexpr public_type get() const noexcept;
 
     [[nodiscard]]
     std::vector<common_handle<VkPhysicalDevice>> enumerate_Physical_device() const;
@@ -35,6 +41,6 @@ class instance final
     }
 
   private:
-    unique_handle<VkInstance> _underling_instance;
+    private_type _underling_instance;
 };
 }
